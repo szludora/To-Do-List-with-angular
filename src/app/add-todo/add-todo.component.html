@@ -1,1 +1,16 @@
 <p>Add a new To-Do</p>
+<form #todoForm="ngForm" (ngSubmit)="onSubmit()">
+    <div class="mb-3">
+      <label for="task" class="form-label">New Task</label>
+      <input
+        type="text"
+        id="task"
+        class="form-control"
+        [(ngModel)]="newTask"
+        name="task"
+        required
+      />
+    </div>
+    <button type="submit" class="btn btn-primary">Add Task</button>
+  </form>
+  

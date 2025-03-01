@@ -22,4 +22,10 @@ export class LocalStorageService {
   clear(): void {
     localStorage.clear();
   }
+
+  addItem(todo: string): void {
+    let todos = this.getItem<string[]>('todos') || [];
+    todos.push(todo);
+    this.setItem('todos', todos);
+  }
 }
