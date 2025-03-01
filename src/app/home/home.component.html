@@ -1,1 +1,12 @@
-<p>Your To-Dos</p>
+<div class="container">
+    <h2>Your ToDos</h2>
+  
+    <button (click)="addTestData()">➕ Add Test Data</button>
+  
+    <ul>
+      <li *ngFor="let todo of todos">
+        {{ todo }}
+      </li>
+    </ul>
+  </div>
+  
