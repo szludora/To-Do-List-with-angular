@@ -31,4 +31,9 @@ export class HomeComponent implements OnInit {
     this.todos = [...this.todos, ...this.testTodos];
     this.localStorageService.setItem('todos', this.todos);
   }
+
+  clearTestData(){
+    this.todos = [];
+    this.localStorageService.clear();
+  }
 }
