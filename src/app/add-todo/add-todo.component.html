@@ -1,6 +1,14 @@
 <div class="container w-50 m-auto content">
   <h2 class="mt-5 mb-5">Add a new To-Do</h2>
-  <form #todoForm="ngForm" (ngSubmit)="onSubmit()">
+  <ngb-alert class="submitAlert" [class.show]="isSubmitted" type="success" (close)="isSubmitted = false">
+    Task is submitted!
+  </ngb-alert>
+  
+  <form
+    #todoForm="ngForm"
+    (ngSubmit)="onSubmit(todoForm)"
+    [class.was-validated]="showValidationErrors"
+  >
     <div class="mb-5">
       <label for="task" class="form-label">New Task</label>
       <input
@@ -9,8 +17,26 @@
         class="form-control"
         [(ngModel)]="newTask"
         name="task"
+        #taskInput="ngModel"
         required
+        minlength="3"
+        pattern="^(?!\d+$)[A-Za-z0-9\s\W]+$"
       />
+      <div
+        *ngIf="
+          (taskInput.invalid && taskInput.touched) ||
+          (showValidationErrors && taskInput.invalid)
+        "
+        class="text-danger"
+      >
+        <p *ngIf="taskInput.errors?.['required']">This field is required!</p>
+        <p *ngIf="taskInput.errors?.['minlength']">
+          Enter at least 3 characters!
+        </p>
+        <p *ngIf="taskInput.errors?.['pattern']">
+          The task cannot consist of only numbers!
+        </p>
+      </div>
     </div>
     <button type="submit" class="btn btn-outline-primary">Add Task</button>
   </form>
