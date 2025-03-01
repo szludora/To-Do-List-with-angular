@@ -43,4 +43,12 @@ export class EditTodoComponent implements OnInit {
   cancelEdit() {
     this.editingIndex = null;
   }
+
+  delete(index: number): void {
+    if (!this.todos) return;
+    if (confirm('Are you sure you want to delete this to-do?')) {
+      this.todos.splice(index, 1);
+      localStorage.setItem('todos', JSON.stringify(this.todos));
+    }
+  }
 }
