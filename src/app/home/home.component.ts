@@ -7,12 +7,21 @@ import { LocalStorageService } from '../services/local-storage.service';
   standalone: true,
   imports: [CommonModule],
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  styleUrls: ['./home.component.css'],
 })
-
 export class HomeComponent implements OnInit {
-  todos: string[] = [];
-  testTodos: string[] = ['Learn Angular', 'Build a project', 'Get a job offer'];
+  todos: { desc: string; status: boolean }[] = [];
+  testTodos1: string[] = [
+    'Learn Angular',
+    'Build a project',
+    'Get a job offer',
+  ];
+
+  testTodos = [
+    { desc: 'Learn Angular', status: false },
+    { desc: 'Build a project', status: false },
+    { desc: 'Get a job offer', status: false },
+  ];
 
   constructor(private localStorageService: LocalStorageService) {}
 
@@ -21,18 +30,18 @@ export class HomeComponent implements OnInit {
   }
 
   loadTodos() {
-    const savedTodos = this.localStorageService.getItem<string[]>('todos');
-    if (savedTodos) {
-      this.todos = savedTodos;
-    }
+    this.todos = this.localStorageService.getAllItems().map((todo) => todo);
   }
 
   addTestData() {
-    this.todos = [...this.todos, ...this.testTodos];
-    this.localStorageService.setItem('todos', this.todos);
+    this.testTodos.forEach((todo) => {
+      this.localStorageService.addItem(todo);
+    });
+
+    this.loadTodos();
   }
 
-  clearTestData(){
+  clearTestData() {
     this.todos = [];
     this.localStorageService.clear();
   }

@@ -16,7 +16,7 @@ export class AddTodoComponent {
   onSubmit() {
     if (!this.newTask.trim()) return;
 
-    this.localStorageService.addItem(this.newTask);
+    this.localStorageService.addItem({desc: this.newTask, status: false});
     alert('Your todo successfully added!');
     this.newTask = '';
   }

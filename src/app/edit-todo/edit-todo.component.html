@@ -1,11 +1,19 @@
-<p>Edit existing To-Dos</p>
-
 <ul>
   <li *ngFor="let todo of todos; let i = index">
-    <span *ngIf="editingIndex !== i">{{ todo }}</span>
+    <span>{{ todo.desc }}</span>
+
+    <input
+      (click)="changeStatus(i)"
+      mdbCheckbox
+      class="form-check-input"
+      type="checkbox"
+      value=""
+      [checked]="todo.status"
+    />
+
     <input *ngIf="editingIndex === i" [(ngModel)]="editedTodo" />
 
-    <button (click)="delete(i)">Delete</button>
+    <button  *ngIf="todo.status === false" (click)="delete(i)">Delete</button>
     <button *ngIf="editingIndex !== i" (click)="startEditing(i)">Edit</button>
     <button *ngIf="editingIndex === i" (click)="saveEdit()">Save</button>
     <button *ngIf="editingIndex === i" (click)="cancelEdit()">Cancel</button>

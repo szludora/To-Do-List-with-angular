@@ -23,9 +23,26 @@ export class LocalStorageService {
     localStorage.clear();
   }
 
-  addItem(todo: string): void {
-    let todos = this.getItem<string[]>('todos') || [];
-    todos.push(todo);
+  addItem(todo: { desc: string; status: boolean }): void {
+    let todos =
+      this.getItem<{ [key: number]: { desc: string; status: boolean } }>(
+        'todos'
+      ) || {};
+
+    const id = Math.max(0, ...Object.keys(todos).map(Number)) + 1;
+
+    todos[id] = { desc: todo.desc, status: todo.status };
     this.setItem('todos', todos);
+  }
+
+  getAllItems(): { id: number; desc: string; status: boolean }[] {
+    let todos =
+      this.getItem<{ [key: number]: { desc: string; status: boolean } }>(
+        'todos'
+      ) || {};
+    return Object.keys(todos).map((key) => ({
+      id: Number(key),
+      ...todos[Number(key)],
+    }));
   }
 }
