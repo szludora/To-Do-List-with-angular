@@ -1,6 +1,7 @@
-<p>Add a new To-Do</p>
-<form #todoForm="ngForm" (ngSubmit)="onSubmit()">
-    <div class="mb-3">
+<div class="container w-50 m-auto content">
+  <h2 class="mt-5 mb-5">Add a new To-Do</h2>
+  <form #todoForm="ngForm" (ngSubmit)="onSubmit()">
+    <div class="mb-5">
       <label for="task" class="form-label">New Task</label>
       <input
         type="text"
@@ -11,6 +12,6 @@
         required
       />
     </div>
-    <button type="submit" class="btn btn-primary">Add Task</button>
+    <button type="submit" class="btn btn-outline-primary">Add Task</button>
   </form>
-  
+</div>

@@ -1,0 +1,8 @@
+.content{
+    max-width: 600px;
+}
+
+form{
+    border: 1px solid rgb(140, 140, 140);
+    padding: 5rem;
+}

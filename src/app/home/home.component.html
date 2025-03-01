@@ -1,13 +1,27 @@
-<div class="container">
-  <h2>Your ToDos</h2>
+<div class="container w-50 m-auto content">
+  <h2 class="mt-5 mb-5">Your ToDos</h2>
 
-  <button (click)="addTestData()">➕ Add Test Data</button>
-  <button (click)="clearTestData()">➖ Clear Test Data</button>
+  <div class="buttons d-flex gap-4">
+    <button class="btn btn-outline-success" (click)="addTestData()">
+      ➕ Add Test Data
+    </button>
+    <button class="btn btn-outline-danger" (click)="clearTestData()">
+      ➖ Clear Test Data
+    </button>
+  </div>
 
-  <ul>
-    <li *ngFor="let todo of todos">
-      {{ todo.desc }}
-      {{ todo.status ? "✅" : "❌" }}
+  <ul class="list-group list-group-light list-group-small mt-5">
+    <li
+      *ngFor="let todo of todos; let i = index"
+      [ngStyle]="stylesMap[i]"
+      class="list-group-item d-flex justify-content-between align-items-center"
+    >
+      <div>
+        {{ todo.desc }}
+      </div>
+      <div class="large-status">
+        {{ todo.status ? "✅" : "❌" }}
+      </div>
     </li>
   </ul>
 </div>

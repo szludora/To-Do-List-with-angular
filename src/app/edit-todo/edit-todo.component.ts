@@ -16,7 +16,9 @@ export class EditTodoComponent implements OnInit {
   todos: { desc: string; status: boolean }[] = [];
   editedTodo: string = '';
   editingIndex: number | null = null;
-
+  
+  prevStatus = false;
+  
   ngOnInit() {
     this.loadTodos();
   }
@@ -45,7 +47,7 @@ export class EditTodoComponent implements OnInit {
   }
 
   delete(index: number): void {
-    if(this.todos[index].status === false){
+    if (this.todos[index].status === false) {
       if (confirm('Are you sure you want to delete this to-do?')) {
         this.todos.splice(index, 1);
         this.localStorageService.setItem('todos', this.todos);
@@ -56,5 +58,15 @@ export class EditTodoComponent implements OnInit {
   changeStatus(key: number) {
     this.todos[key].status = !this.todos[key].status;
     this.localStorageService.setItem('todos', this.todos);
+  }
+
+  checkAll() {
+    for (let todo of this.todos) {
+      todo.status = !this.prevStatus;
+    }
+    this.prevStatus = !this.prevStatus;
+    this.localStorageService.setItem('todos', this.todos);
+    console.log(this.prevStatus);
+    
   }
 }
