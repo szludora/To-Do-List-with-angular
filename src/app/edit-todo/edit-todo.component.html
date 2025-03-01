@@ -1,1 +1,12 @@
 <p>Edit existing To-Dos</p>
+
+<ul>
+  <li *ngFor="let todo of todos; let i = index">
+    <span *ngIf="editingIndex !== i">{{ todo }}</span>
+    <input *ngIf="editingIndex === i" [(ngModel)]="editedTodo" />
+
+    <button *ngIf="editingIndex !== i" (click)="startEditing(i)">Edit</button>
+    <button *ngIf="editingIndex === i" (click)="saveEdit()">Save</button>
+    <button *ngIf="editingIndex === i" (click)="cancelEdit()">Cancel</button>
+  </li>
+</ul>
