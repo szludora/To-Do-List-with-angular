@@ -1,3 +1,6 @@
+h2{
+  text-align: center;
+}
 .content {
   max-width: 600px;
 }
@@ -17,4 +20,10 @@ form {
 .submitAlert.show {
   visibility: visible;
   opacity: 1;
+}
+
+.addNewTaskForm{
+  background-color: rgb(255, 241, 216);
+  border: unset;
+  box-shadow: rgb(175, 157, 124) 0px 5px 8px;
 }

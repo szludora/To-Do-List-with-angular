@@ -1,7 +1,7 @@
-<div class="container w-50 m-auto content">
+<div class="d-flex flex-column col-10 col-lg-6 content m-auto">
   <h2 class="mt-5 mb-5">Your ToDos</h2>
 
-  <div class="buttons d-flex gap-4">
+  <div class="buttons d-flex justify-content-between">
     <button class="btn btn-outline-success" (click)="addTestData()">
       ➕ Add Test Data
     </button>
@@ -10,18 +10,28 @@
     </button>
   </div>
 
-  <ul class="list-group list-group-light list-group-small mt-5">
-    <li
-      *ngFor="let todo of todos; let i = index"
-      [ngStyle]="stylesMap[i]"
-      class="list-group-item d-flex justify-content-between align-items-center"
-    >
-      <div>
-        {{ todo.desc }}
+  <div class="bullet-journal mt-5">
+    <ul class="list-group list-group-light list-group-small">
+      <li
+        *ngFor="let todo of todos; let i = index"
+        [ngStyle]="stylesMap[i]"
+        class="list-group-item d-flex justify-content-between align-items-center task"
+        (click)="goToEditPage()"
+      >
+        <div>
+          {{ todo.desc }}
+        </div>
+        <div class="large-status">
+          {{ todo.status ? "✅" : "❌" }}
+        </div>
+      </li>
+      <div [style.display]="todos.length ? 'none' : 'block'">
+        <img
+          src="../../assets/imgs/noTask.png"
+          alt="No Task Yet... :()"
+          class="no-task-img"
+        />
       </div>
-      <div class="large-status">
-        {{ todo.status ? "✅" : "❌" }}
-      </div>
-    </li>
-  </ul>
+    </ul>
+  </div>
 </div>

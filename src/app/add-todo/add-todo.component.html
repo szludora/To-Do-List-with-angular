@@ -1,16 +1,21 @@
-<div class="container w-50 m-auto content">
-  <h2 class="mt-5 mb-5">Add a new To-Do</h2>
-  <ngb-alert class="submitAlert" [class.show]="isSubmitted" type="success" (close)="isSubmitted = false">
+<div class="container sm-12 lg-6 m-auto content">
+  <h2 class="mt-5">Add a new To-Do</h2>
+  <ngb-alert
+    class="submitAlert"
+    [class.show]="isSubmitted"
+    type="success"
+    (close)="isSubmitted = false"
+  >
     Task is submitted!
   </ngb-alert>
-  
   <form
     #todoForm="ngForm"
     (ngSubmit)="onSubmit(todoForm)"
     [class.was-validated]="showValidationErrors"
+    class="addNewTaskForm"
   >
     <div class="mb-5">
-      <label for="task" class="form-label">New Task</label>
+      <label for="task" class="form-label mb-4">New Task</label>
       <input
         type="text"
         id="task"
@@ -38,6 +43,6 @@
         </p>
       </div>
     </div>
-    <button type="submit" class="btn btn-outline-primary">Add Task</button>
+    <button type="submit" class="btn btn-primary">Add Task</button>
   </form>
 </div>

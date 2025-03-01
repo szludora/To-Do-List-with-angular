@@ -16,15 +16,56 @@ export class EditTodoComponent implements OnInit {
   todos: { desc: string; status: boolean }[] = [];
   editedTodo: string = '';
   editingIndex: number | null = null;
-  
   prevStatus = false;
-  
+  stylesMap: { [key: number]: { color: string; 'background-color': string } } =
+    {};
+
+  styles = [
+    { color: 'black', bg: 'white' },
+    { color: 'black', bg: '#B4FFF9' },
+    { color: 'black', bg: '#FFF5BF' },
+    { color: 'black', bg: '#D2DEFF' },
+    { color: 'black', bg: '#D7FFDA' },
+    { color: 'black', bg: '#FFC7DA' },
+    { color: 'black', bg: '#FFCDB4' },
+    { color: 'black', bg: '#FFF1E4' },
+    { color: 'black', bg: '#F7E0FF' },
+  ];
+
   ngOnInit() {
     this.loadTodos();
+    this.getColor();
   }
 
   loadTodos() {
     this.todos = this.localStorageService.getAllItems().map((todo) => todo);
+
+    let savedStyles =
+      this.localStorageService.getItem<{ [key: number]: any }>('todoStyles') ||
+      {};
+
+    this.todos.forEach((_, index) => {
+      if (
+        (!savedStyles[index] && this.todos[index].status === true) ||
+        (savedStyles[index] &&
+          savedStyles[index].bg === 'white' &&
+          this.todos[index].status === true)
+      ) {
+        savedStyles[index] = this.getRandomStyle();
+      } else if (this.todos[index].status === false) {
+        delete savedStyles[index];
+      }
+    });
+
+    this.localStorageService.setItem('todoStyles', savedStyles);
+    this.stylesMap = savedStyles;
+  }
+
+  getRandomStyle() {
+    const randomIndex =
+      Math.floor(Math.random() * (this.styles.length - 1)) + 1;
+    const style = this.styles[randomIndex];
+    return { color: style.color, 'background-color': style.bg };
   }
 
   startEditing(index: number) {
@@ -58,6 +99,8 @@ export class EditTodoComponent implements OnInit {
   changeStatus(key: number) {
     this.todos[key].status = !this.todos[key].status;
     this.localStorageService.setItem('todos', this.todos);
+    this.stylesMap = {};
+    this.loadTodos();
   }
 
   checkAll() {
@@ -67,6 +110,14 @@ export class EditTodoComponent implements OnInit {
     this.prevStatus = !this.prevStatus;
     this.localStorageService.setItem('todos', this.todos);
     console.log(this.prevStatus);
-    
+    this.stylesMap = {};
+    this.loadTodos();
+  }
+
+  getColor() {
+    this.stylesMap =
+      this.localStorageService.getItem<{
+        [key: number]: { color: string; 'background-color': string };
+      }>('todoStyles') || {};
   }
 }

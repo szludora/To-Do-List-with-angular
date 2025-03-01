@@ -1,25 +1,32 @@
 <main class="main">
-  <ul ngbNav #nav="ngbNav" class="nav-tabs">
-    <li ngbNavItem>
-      <button ngbNavLink>Home</button>
-      <ng-template ngbNavContent>
-        <ng-container *ngComponentOutlet="components[0]"></ng-container>
-      </ng-template>
+  <ul class="nav nav-tabs d-flex justify-content-center gap-5">
+    <li class="nav-item">
+      <button
+        class="nav-link"
+        [ngClass]="{ active: activeLink === '/' }"
+        (click)="navigateTo('/')"
+      >
+        Home
+      </button>
     </li>
-    <li ngbNavItem>
-      <button ngbNavLink>Add a To-Do</button>
-      <ng-template ngbNavContent>
-        <ng-container *ngComponentOutlet="components[1]"></ng-container>
-      </ng-template>
+    <li class="nav-item">
+      <button
+        class="nav-link"
+        [ngClass]="{ active: activeLink === '/add' }"
+        (click)="navigateTo('/add')"
+      >
+        Add
+      </button>
     </li>
-    <li ngbNavItem>
-      <button ngbNavLink>Edit To-Do</button>
-      <ng-template ngbNavContent>
-        <ng-container *ngComponentOutlet="components[2]"></ng-container>
-      </ng-template>
+    <li class="nav-item">
+      <button
+        class="nav-link"
+        [ngClass]="{ active: activeLink === '/edit' }"
+        (click)="navigateTo('/edit')"
+      >
+        Edit
+      </button>
     </li>
   </ul>
-  <div [ngbNavOutlet]="nav"></div>
+  <router-outlet></router-outlet>
 </main>
-
-<router-outlet />
