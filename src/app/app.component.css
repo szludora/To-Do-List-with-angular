@@ -1,9 +1,24 @@
 * {
   box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  height: 100%;
 }
 
 .main {
-  min-height: 100dvh;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
   background: url("../assets/imgs/bg.jpg");
   background-size: cover;
   background-repeat: no-repeat;
@@ -50,4 +65,10 @@ ul li button {
 .nav-link:hover::after,
 .nav-link.active::after {
   transform: translateX(-50%) scaleX(1);
+}
+
+footer {
+  text-align: center;
+  width: 100%;
+  padding: 1rem;
 }

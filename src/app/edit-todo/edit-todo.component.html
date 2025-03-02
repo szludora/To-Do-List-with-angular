@@ -53,5 +53,12 @@
         />
       </li>
     </ul>
+    <div [style.display]="todos.length ? 'none' : 'block'">
+      <img
+        src="../../assets/imgs/noTask.png"
+        alt="No Task Yet... :()"
+        class="no-task-img"
+      />
+    </div>
   </div>
 </div>

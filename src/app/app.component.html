@@ -1,20 +1,35 @@
-<main class="main">
-  <ul class="nav nav-tabs d-flex justify-content-center gap-5">
-    <li class="nav-item">
-      <button class="nav-link" [ngClass]="{ active: activeLink === '/' }" (click)="navigateTo('/')">
-        Home
-      </button>
-    </li>
-    <li class="nav-item">
-      <button class="nav-link" [ngClass]="{ active: activeLink === '/add' }" (click)="navigateTo('/add')">
-        Add
-      </button>
-    </li>
-    <li class="nav-item">
-      <button class="nav-link" [ngClass]="{ active: activeLink === '/edit' }" (click)="navigateTo('/edit')">
-        Edit
-      </button>
-    </li>
-  </ul>
-  <router-outlet></router-outlet>
-</main>
+<div class="main-container">
+  <main class="main">
+    <ul class="nav nav-tabs d-flex justify-content-center gap-5">
+      <li class="nav-item">
+        <button
+          class="nav-link"
+          [ngClass]="{ active: activeLink === '/' }"
+          (click)="navigateTo('/')"
+        >
+          Home
+        </button>
+      </li>
+      <li class="nav-item">
+        <button
+          class="nav-link"
+          [ngClass]="{ active: activeLink === '/add' }"
+          (click)="navigateTo('/add')"
+        >
+          Add
+        </button>
+      </li>
+      <li class="nav-item">
+        <button
+          class="nav-link"
+          [ngClass]="{ active: activeLink === '/edit' }"
+          (click)="navigateTo('/edit')"
+        >
+          Edit
+        </button>
+      </li>
+    </ul>
+    <router-outlet></router-outlet>
+  </main>
+  <footer>Made by Dora Szlucska</footer>
+</div>

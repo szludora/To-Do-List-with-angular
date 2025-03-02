@@ -12,12 +12,14 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./edit-todo.component.css'],
 })
 export class EditTodoComponent implements OnInit {
-  constructor(private localStorageService: LocalStorageService, private route: ActivatedRoute) {}
+  constructor(
+    private localStorageService: LocalStorageService,
+    private route: ActivatedRoute
+  ) {}
 
   todos: { desc: string; status: boolean }[] = [];
   editedTodo: string = '';
   editingIndex: number | null = null;
-  prevStatus = false;
   stylesMap: { [key: number]: { color: string; 'background-color': string } } =
     {};
 
@@ -37,7 +39,7 @@ export class EditTodoComponent implements OnInit {
     this.loadTodos();
     this.getColor();
 
-    this.route.params.subscribe(params => {
+    this.route.params.subscribe((params) => {
       const index = +params['id'];
       if (!isNaN(index) && this.todos[index]) {
         this.startEditing(index);
@@ -112,12 +114,14 @@ export class EditTodoComponent implements OnInit {
   }
 
   checkAll() {
+    let prevStatus = this.todos[0].status;
+
     for (let todo of this.todos) {
-      todo.status = !this.prevStatus;
+      todo.status = !prevStatus;
     }
-    this.prevStatus = !this.prevStatus;
+    prevStatus = !prevStatus;
     this.localStorageService.setItem('todos', this.todos);
-    console.log(this.prevStatus);
+    console.log(prevStatus);
     this.stylesMap = {};
     this.loadTodos();
   }
