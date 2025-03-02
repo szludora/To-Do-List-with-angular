@@ -36,8 +36,7 @@ export class EditTodoComponent implements OnInit {
   ];
 
   ngOnInit() {
-    this.loadTodos();
-    this.getColor();
+    this.updateStyles();
 
     this.route.params.subscribe((params) => {
       const index = +params['id'];
@@ -69,6 +68,12 @@ export class EditTodoComponent implements OnInit {
 
     this.localStorageService.setItem('todoStyles', savedStyles);
     this.stylesMap = savedStyles;
+  }
+
+  updateStyles() {
+    this.loadTodos();
+    this.getRandomStyle();
+    this.getColor();
   }
 
   getRandomStyle() {
@@ -104,13 +109,14 @@ export class EditTodoComponent implements OnInit {
         this.localStorageService.setItem('todos', this.todos);
       }
     }
+    this.updateStyles();
   }
 
   changeStatus(key: number) {
     this.todos[key].status = !this.todos[key].status;
     this.localStorageService.setItem('todos', this.todos);
     this.stylesMap = {};
-    this.loadTodos();
+    this.updateStyles();
   }
 
   checkAll() {
@@ -123,7 +129,7 @@ export class EditTodoComponent implements OnInit {
     this.localStorageService.setItem('todos', this.todos);
     console.log(prevStatus);
     this.stylesMap = {};
-    this.loadTodos();
+    this.updateStyles();
   }
 
   getColor() {
