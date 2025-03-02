@@ -39,28 +39,28 @@ h2 {
   margin: 1rem;
 }
 
-.addTestData{
-background-color: rgb(151, 241, 178);
+.addTestData {
+  background-color: rgb(151, 241, 178);
 }
 
-.clearAllData{
+.clearAllData {
   background-color: rgb(255, 165, 165);
 }
 
-.addTestData:hover{
+.addTestData:hover {
   background-color: rgb(71, 224, 117);
 }
 
-.clearAllData:hover{
+.clearAllData:hover {
   background-color: rgb(241, 71, 71);
 }
 
 .desc {
   margin: 1% 5%;
-  overflow-wrap: break-word}
+  word-break: break-word;
+}
 
 @media screen and (max-width: 768px) {
-
   .bullet-journal {
     padding: 1rem 0;
   }

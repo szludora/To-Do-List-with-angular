@@ -72,6 +72,10 @@ input {
   margin: 3rem auto;
 }
 
+.desc {
+  margin: 1% 5%;
+  word-break: break-word;
+}
 @media screen and (max-width: 768px) {
   .task {
     margin: 1% 5%;

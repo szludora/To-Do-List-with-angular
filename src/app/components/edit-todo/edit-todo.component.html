@@ -10,7 +10,7 @@
         *ngFor="let todo of todos; let i = index"
         [ngStyle]="stylesMap[i]"
       >
-        <span *ngIf="editingIndex !== i" class="flex-grow-1">{{
+        <span *ngIf="editingIndex !== i" class="flex-grow-1 desc">{{
           todo.desc
         }}</span>
 

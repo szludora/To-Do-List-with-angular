@@ -16,17 +16,18 @@
   >
     <div class="mb-5">
       <label for="task" class="form-label mb-4">New Task</label>
-      <input
+      <textarea
         type="text"
         id="task"
         class="form-control"
         [(ngModel)]="newTask"
         name="task"
+        rows="3"
         #taskInput="ngModel"
         required
         minlength="3"
         pattern="^(?!\d+$)[A-Za-z0-9\s\W]+$"
-      />
+      ></textarea>
       <div
         *ngIf="
           (taskInput.invalid && taskInput.touched) ||
