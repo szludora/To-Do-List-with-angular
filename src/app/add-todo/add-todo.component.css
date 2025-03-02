@@ -1,4 +1,4 @@
-h2{
+h2 {
   text-align: center;
 }
 .content {
@@ -22,8 +22,8 @@ form {
   opacity: 1;
 }
 
-.addNewTaskForm{
+.addNewTaskForm {
   background-color: rgb(255, 241, 216);
   border: unset;
-  box-shadow: rgb(175, 157, 124) 0px 5px 8px;
+  box-shadow: rgb(175, 157, 124) 0px 3px 8px;
 }
