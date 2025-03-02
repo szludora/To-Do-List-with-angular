@@ -176,7 +176,7 @@ footer {
 }
 
 .playful .noTasksText {
-  display: none;
+  display: none !important;
 }
 
 .office .noTasksText {
