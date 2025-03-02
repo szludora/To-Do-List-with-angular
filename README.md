@@ -1,27 +1,60 @@
-# Todo
+# Todo App
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.12.
+A simple Todo application built with Angular and Bootstrap.
 
-## Development server
+## Preview
+![image](https://github.com/user-attachments/assets/6a524335-ecaf-4849-b8b4-9bba1202255f)
+![image](https://github.com/user-attachments/assets/d24c2747-6bd5-4ae0-a9eb-6041757a0bdf)
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Features
 
-## Code scaffolding
+- Add, edit, and delete tasks
+- Mark tasks as completed
+- Store tasks using LocalStorage
+- Navigation between pages with active link indication
+- Only incomplete tasks can be deleted
+- Completed tasks have a distinct appearance
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Installation
 
-## Build
+1. Clone the repository:
+   ```sh
+   git clone https://github.com/yourusername/todo-app.git
+   cd todo-app
+   ```
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+2. Install dependencies:
+   ```sh
+   npm install
+   ```
 
-## Running unit tests
+3. Run the application:
+   ```sh
+   ng serve
+   ```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+4. Open the browser and navigate to `http://localhost:4200/`
 
-## Running end-to-end tests
+## Built With
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+- **Angular** - Frontend framework
+- **Bootstrap** - UI styling
+- **FontAwesome** - Icons
 
-## Further help
+## Folder Structure
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+```
+/src
+  /app
+    /components
+      - add-todo.component.ts
+      - edit-todo.component.ts
+      - home.component.ts
+    /services
+      - local-storage.service.ts
+    - app.component.ts
+    - app.config.ts
+    - app.routes.ts
+  - index.html
+  - styles.css
+```
