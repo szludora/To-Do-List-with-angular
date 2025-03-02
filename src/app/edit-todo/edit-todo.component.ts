@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { LocalStorageService } from '../services/local-storage.service';
 import { FormsModule } from '@angular/forms';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-edit-todo',
@@ -11,7 +12,7 @@ import { FormsModule } from '@angular/forms';
   styleUrls: ['./edit-todo.component.css'],
 })
 export class EditTodoComponent implements OnInit {
-  constructor(private localStorageService: LocalStorageService) {}
+  constructor(private localStorageService: LocalStorageService, private route: ActivatedRoute) {}
 
   todos: { desc: string; status: boolean }[] = [];
   editedTodo: string = '';
@@ -35,6 +36,13 @@ export class EditTodoComponent implements OnInit {
   ngOnInit() {
     this.loadTodos();
     this.getColor();
+
+    this.route.params.subscribe(params => {
+      const index = +params['id'];
+      if (!isNaN(index) && this.todos[index]) {
+        this.startEditing(index);
+      }
+    });
   }
 
   loadTodos() {

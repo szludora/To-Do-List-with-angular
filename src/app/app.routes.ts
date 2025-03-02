@@ -8,11 +8,11 @@ export const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'add', component: AddTodoComponent },
   { path: 'edit', component: EditTodoComponent },
+  { path: 'edit/:id', component: EditTodoComponent },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
 })
-
 export class AppRoutingModule {}

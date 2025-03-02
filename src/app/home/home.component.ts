@@ -49,9 +49,10 @@ export class HomeComponent implements OnInit {
     this.localStorageService.clear();
   }
 
-  goToEditPage() {
-    this.router.navigate(['/edit']);
+  goToEditPage(i: number) {
+    this.router.navigate(['/edit', i]);
   }
+  
 
   getColor() {
     this.stylesMap =
