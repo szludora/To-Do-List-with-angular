@@ -35,13 +35,13 @@
             <i class="fa-solid fa-xmark"></i>
           </button>
           <input
-          (click)="changeStatus(i)"
-          mdbCheckbox
-          class="form-check-input large-checkbox d-flex align-self-center flex-shrink-0"
-          type="checkbox"
-          value=""
-          [checked]="todo.status"
-        />
+            (click)="changeStatus(i)"
+            mdbCheckbox
+            class="form-check-input large-checkbox d-flex align-self-center flex-shrink-0"
+            type="checkbox"
+            value=""
+            [checked]="todo.status"
+          />
         </div>
 
         <div
@@ -59,13 +59,13 @@
             <i class="fa-regular fa-pen-to-square"></i>
           </button>
           <input
-          (click)="changeStatus(i)"
-          mdbCheckbox
-          class="form-check-input large-checkbox d-flex align-self-center flex-shrink-0"
-          type="checkbox"
-          value=""
-          [checked]="todo.status"
-        />
+            (click)="changeStatus(i)"
+            mdbCheckbox
+            class="form-check-input large-checkbox d-flex align-self-center flex-shrink-0"
+            type="checkbox"
+            value=""
+            [checked]="todo.status"
+          />
         </div>
       </li>
     </ul>
@@ -75,6 +75,9 @@
         alt="No Task Yet... :()"
         class="no-task-img"
       />
+    </div>
+    <div class="noTasksText" [style.display]="todos.length ? 'none' : 'block'">
+      <p>No tasks yet...</p>
     </div>
   </div>
 </div>
