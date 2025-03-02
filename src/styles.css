@@ -175,6 +175,16 @@ footer {
   transform: translateX(-50%) scaleX(1);
 }
 
+.playful .noTasksText {
+  display: none;
+}
+
+.office .noTasksText {
+  font-size: 2em;
+  text-align: center;
+  display: block;
+}
+
 @media screen and (max-width: 768px) {
   .task {
     margin: 1% 5%;
