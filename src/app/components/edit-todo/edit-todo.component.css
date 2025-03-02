@@ -71,3 +71,28 @@ input {
   width: 100%;
   margin: 3rem auto;
 }
+
+@media screen and (max-width: 768px) {
+  .task {
+    margin: 1% 5%;
+  }
+
+  .bullet-journal {
+    padding: 1rem 0;
+  }
+
+  .edit,
+  .delete {
+    font-size: 15px;
+    padding: 4px 8px;
+    width: fit-content;
+  }
+
+  .large-checkbox {
+    margin-left: 0.5em !important;
+  }
+
+  .modify {
+    gap: 0.5rem !important;
+  }
+}

@@ -1,4 +1,4 @@
-<div class="d-flex flex-column col-10 col-lg-6 content m-auto">
+<div class="d-flex flex-column col-11 col-lg-6 content m-auto">
   <h2 class="mt-5 mb-5">Your To-Dos</h2>
 
   <div class="buttons d-flex justify-content-between">
@@ -18,7 +18,7 @@
         class="list-group-item d-flex justify-content-between align-items-center task"
         (click)="goToEditPage(i)"
       >
-        <div>
+        <div class="desc">
           {{ todo.desc }}
         </div>
         <div class="large-status">

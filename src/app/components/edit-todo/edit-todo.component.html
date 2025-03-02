@@ -1,11 +1,13 @@
-<div class="d-flex flex-column col-10 col-lg-6 content m-auto">
+<div class="d-flex flex-column col-11 col-lg-6 content m-auto">
   <h2 class="mt-5 mb-5">Edit Tasks</h2>
-  <button (click)="checkAll()" class="btn checkAll align-self-end">Check All</button>
+  <button (click)="checkAll()" class="btn checkAll align-self-end">
+    Check All
+  </button>
   <div class="bullet-journal mt-5">
     <ul class="list-group list-group-light list-group-small">
       <li
-      class="list-group-item d-flex justify-content-between align-items-center task"
-      *ngFor="let todo of todos; let i = index"
+        class="list-group-item d-flex justify-content-between align-items-center task"
+        *ngFor="let todo of todos; let i = index"
         [ngStyle]="stylesMap[i]"
       >
         <span *ngIf="editingIndex !== i" class="flex-grow-1">{{
@@ -22,7 +24,9 @@
           class="modify justify-content-between d-flex gap-3"
           *ngIf="editingIndex === i"
         >
-          <button (click)="saveEdit()" class="btn btn-success"><i class="fa-regular fa-floppy-disk"></i></button>
+          <button (click)="saveEdit()" class="btn btn-success">
+            <i class="fa-regular fa-floppy-disk"></i>
+          </button>
           <button (click)="cancelEdit()" class="btn btn-secondary">
             <i class="fa-solid fa-xmark"></i>
           </button>
@@ -37,7 +41,7 @@
             (click)="delete(i)"
             [style.visibility]="todo.status ? 'hidden' : 'visible'"
           >
-          <i class="fa-regular fa-trash-can"></i>
+            <i class="fa-regular fa-trash-can"></i>
           </button>
           <button class="btn edit" (click)="startEditing(i)">
             <i class="fa-regular fa-pen-to-square"></i>

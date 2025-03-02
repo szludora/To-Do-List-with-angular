@@ -18,7 +18,7 @@ h2 {
 
 .task {
   padding: 15px;
-  border: unset;
+  border: none;
   margin: 1% 7%;
   box-shadow: #c2b183 0px 3px 8px;
 }
@@ -53,4 +53,15 @@ background-color: rgb(151, 241, 178);
 
 .clearAllData:hover{
   background-color: rgb(241, 71, 71);
+}
+
+.desc {
+  margin: 1% 5%;
+  overflow-wrap: break-word}
+
+@media screen and (max-width: 768px) {
+
+  .bullet-journal {
+    padding: 1rem 0;
+  }
 }
