@@ -18,8 +18,8 @@
         class="list-group-item d-flex justify-content-between align-items-center task"
         (click)="goToEditPage(i)"
       >
-        <div [class]="stylesMap[i]?.font">
-          {{ todo.desc }}
+      <div [class]="stylesMap[i]?.font">
+        {{ todo.desc }}
         </div>
         <div class="large-status">
           {{ todo.status ? "✅" : "❌" }}

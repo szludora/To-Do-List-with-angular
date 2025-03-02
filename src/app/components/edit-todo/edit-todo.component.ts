@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation  } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { LocalStorageService } from '../../services/local-storage.service';
 import { FormsModule } from '@angular/forms';
@@ -10,6 +10,7 @@ import { ActivatedRoute } from '@angular/router';
   imports: [CommonModule, FormsModule],
   templateUrl: './edit-todo.component.html',
   styleUrls: ['./edit-todo.component.css'],
+  encapsulation: ViewEncapsulation.None,
 })
 export class EditTodoComponent implements OnInit {
   constructor(

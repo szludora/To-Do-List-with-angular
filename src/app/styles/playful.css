@@ -1,0 +1,59 @@
+.playful .header {
+  background-color: rgb(255, 215, 147);
+  box-shadow: rgb(175, 157, 124) 0px 3px 8px;
+}
+
+.playful .bullet-journal {
+  background-color: #fdf6e3;
+  background-image: radial-gradient(#888 1px, transparent 1px);
+  background-size: 25px 25px;
+  border-radius: 10px;
+  padding: 4rem 1rem;
+  box-shadow: rgb(175, 157, 124) 0px 3px 8px;
+}
+
+.playful .no-task-img {
+  display: block;
+  max-width: 550px;
+  width: 100%;
+  margin: 3rem auto;
+}
+
+.playful .task {
+  box-shadow: #c2b183 0px 3px 8px;
+}
+
+.playful .stickers {
+  background: url("../../assets/imgs/stickers.png") repeat;
+  background-size: 80%;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 2;
+}
+
+.playful .nav {
+  background-color: rgb(255, 232, 181);
+}
+
+.playful .nav button {
+  color: black;
+}
+
+.playful .nav-link.active {
+  background-color: rgb(255, 232, 181);
+}
+
+.playful .nav-link::after {
+  background-color: rgb(235, 153, 1);
+}
+
+.playful footer {
+  background-color: wheat;
+}
+
+.playful a {
+  text-decoration: none;
+}

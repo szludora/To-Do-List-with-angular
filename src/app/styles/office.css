@@ -1,0 +1,108 @@
+:root {
+  --color: #4c8771;
+  --colorHover: #156a4b;
+  --link: #fff45e;
+  --linkHover: rgb(251, 188, 52);
+  --activeMenu: #ffd429;
+  --headerColor: #ffe0a6;
+}
+
+.office .bullet-journal {
+  border: 1px solid var(--color);
+  border-radius: 10px;
+  padding: 3em 0;
+}
+
+.office .nav,
+.office footer {
+  background-color: var(--color);
+  color: var(--headerColor);
+}
+
+.office .addNewTaskForm,
+.office .header {
+  border: 1px solid var(--color);
+  border-radius: 10px;
+  padding: 2rem;
+}
+
+.office .addNewTaskForm,
+.office .bullet-journal,
+.office .header {
+  background-color: #f9f9f9;
+}
+
+.office .addNewTaskForm textarea {
+  max-width: 700px;
+  margin: auto;
+  border: 2px solid var(--color);
+}
+
+.office li {
+  background-color: unset;
+  border-bottom: solid 2px var(--color);
+}
+
+.office .nav button {
+  color: var(--headerColor);
+}
+
+.office .nav-link.active {
+  background-color: var(--color);
+  color: var(--headerColor);
+}
+
+.nav-link:hover {
+  color: initial;
+}
+
+.office .nav-link::after {
+  background-color: var(--activeMenu);
+}
+
+.office .nav-link:hover::after,
+.office .nav-link.active::after {
+  transform: translateX(-50%) scaleX(1);
+}
+
+.office footer {
+  color: var(--headerColor);
+}
+
+.office a {
+  text-decoration: none;
+  color: var(--link);
+}
+
+.office a:hover {
+  text-decoration: none;
+  color: var(--linkHover);
+}
+
+.office .no-task-img {
+  display: none;
+}
+
+.office .checkAll {
+  background-color: var(--color);
+  color: white;
+}
+
+.office .checkAll:hover {
+  background-color: var(--colorHover);
+}
+
+button.nav-link {
+  border: none !important;
+}
+
+.office .edit {
+  background-color: var(--color);
+  color: white;
+  border: none;
+}
+
+.office .edit:hover,
+.office .checkAll:hover {
+  background-color: var(--colorHover);
+}

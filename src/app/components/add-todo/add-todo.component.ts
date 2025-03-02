@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ViewEncapsulation } from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
 import { LocalStorageService } from '../../services/local-storage.service';
 import { CommonModule } from '@angular/common';
@@ -10,6 +10,7 @@ import { NgbAlertModule } from '@ng-bootstrap/ng-bootstrap';
   imports: [CommonModule, FormsModule, NgbAlertModule],
   templateUrl: './add-todo.component.html',
   styleUrl: './add-todo.component.css',
+  encapsulation: ViewEncapsulation.None,
 })
 export class AddTodoComponent {
   constructor(private localStorageService: LocalStorageService) {}

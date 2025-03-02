@@ -15,7 +15,7 @@ form {
   opacity: 1;
 }
 
-.addNewTaskForm {
+.playful .addNewTaskForm {
   background-color: rgb(255, 241, 216);
   border: unset;
   box-shadow: rgb(175, 157, 124) 0px 3px 8px;

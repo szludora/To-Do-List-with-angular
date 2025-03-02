@@ -21,23 +21,31 @@
         <input
           *ngIf="editingIndex === i"
           [(ngModel)]="editedTodo"
-          class="flex-grow-1 me-5 p-2 m-0"
+          class="text p-1 m-0 flex-grow-1"
         />
 
         <div
-          class="modify justify-content-between d-flex gap-3"
+          class="modify justify-content-between d-flex align-items-end gap-3"
           *ngIf="editingIndex === i"
         >
-          <button (click)="saveEdit()" class="btn btn-success">
+          <button (click)="saveEdit()" class="btn btn-success save">
             <i class="fa-regular fa-floppy-disk"></i>
           </button>
-          <button (click)="cancelEdit()" class="btn btn-secondary">
+          <button (click)="cancelEdit()" class="btn btn-secondary cancel">
             <i class="fa-solid fa-xmark"></i>
           </button>
+          <input
+          (click)="changeStatus(i)"
+          mdbCheckbox
+          class="form-check-input large-checkbox d-flex align-self-center flex-shrink-0"
+          type="checkbox"
+          value=""
+          [checked]="todo.status"
+        />
         </div>
 
         <div
-          class="modify justify-content-between d-flex gap-3"
+          class="modify justify-content-between d-flex gap-3 ms-auto"
           *ngIf="editingIndex !== i"
         >
           <button
@@ -50,15 +58,15 @@
           <button class="btn edit" (click)="startEditing(i)">
             <i class="fa-regular fa-pen-to-square"></i>
           </button>
-        </div>
-        <input
+          <input
           (click)="changeStatus(i)"
           mdbCheckbox
-          class="form-check-input large-checkbox d-flex align-self-center ms-4"
+          class="form-check-input large-checkbox d-flex align-self-center flex-shrink-0"
           type="checkbox"
           value=""
           [checked]="todo.status"
         />
+        </div>
       </li>
     </ul>
     <div [style.display]="todos.length ? 'none' : 'block'">
