@@ -13,6 +13,7 @@ body {
   flex: 1;
   display: flex;
   flex-direction: column;
+  z-index: 3;
 }
 
 .main-container {
@@ -23,6 +24,19 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
+}
+
+.stickers {
+  background: url("../assets/imgs/stickers.png");
+  background-size: 80%;
+  background-repeat: repeat;
+  min-width: 100dvw;
+  min-height: 100dvh;
+  background-attachment: fixed;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 2;
 }
 
 ul {
@@ -72,8 +86,24 @@ footer {
   width: 100%;
   padding: 1rem;
   font-size: 1.2em;
+  margin-top: 3rem;
+  background-color: wheat;
+  z-index: 3;
 }
 
 a {
   text-decoration: none;
+}
+
+@media screen and (max-width: 768px) {
+  .stickers {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 1768px) {
+  .stickers {
+    background-size: 40%;
+    background-repeat: repeat;
+  }
 }

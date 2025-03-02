@@ -37,6 +37,7 @@ h2 {
 
 .content {
   margin: 1rem;
+  max-width: 1000px;
 }
 
 .addTestData {
@@ -58,6 +59,16 @@ h2 {
 .desc {
   margin: 1% 5%;
   word-break: break-word;
+}
+
+
+.header {
+  background-color: rgb(255, 215, 147);
+  margin-top: 2rem;
+  padding: 0 0 3rem 0;
+  border-radius: 10px;
+  padding: 2rem;
+  box-shadow: rgb(175, 157, 124) 0px 3px 8px;
 }
 
 @media screen and (max-width: 768px) {
