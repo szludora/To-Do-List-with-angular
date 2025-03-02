@@ -17,22 +17,23 @@ export class EditTodoComponent implements OnInit {
     private route: ActivatedRoute
   ) {}
 
-  todos: { desc: string; status: boolean }[] = [];
+  todos: { desc: string; status: boolean; font: string }[] = [];
   editedTodo: string = '';
   editingIndex: number | null = null;
-  stylesMap: { [key: number]: { color: string; 'background-color': string } } =
-    {};
+  stylesMap: {
+    [key: number]: { color: string; 'background-color': string; font: string };
+  } = {};
 
   styles = [
-    { color: 'black', bg: 'white' },
-    { color: 'black', bg: '#B4FFF9' },
-    { color: 'black', bg: '#FFF5BF' },
-    { color: 'black', bg: '#D2DEFF' },
-    { color: 'black', bg: '#D7FFDA' },
-    { color: 'black', bg: '#FFC7DA' },
-    { color: 'black', bg: '#FFCDB4' },
-    { color: 'black', bg: '#FFF1E4' },
-    { color: 'black', bg: '#F7E0FF' },
+    { color: 'black', bg: 'white', font: 'sans' },
+    { color: 'black', bg: '#B4FFF9', font: 'font-two' },
+    { color: 'black', bg: '#FFF5BF', font: 'font-three' },
+    { color: 'black', bg: '#D2DEFF', font: 'font-one' },
+    { color: 'black', bg: '#D7FFDA', font: 'font-two' },
+    { color: 'black', bg: '#FFC7DA', font: 'font-three' },
+    { color: 'black', bg: '#FFCDB4', font: 'font-one' },
+    { color: 'black', bg: '#FFF1E4', font: 'font-two' },
+    { color: 'black', bg: '#F7E0FF', font: 'font-three' },
   ];
 
   ngOnInit() {
@@ -72,7 +73,6 @@ export class EditTodoComponent implements OnInit {
 
   updateStyles() {
     this.loadTodos();
-    this.getRandomStyle();
     this.getColor();
   }
 
@@ -80,7 +80,11 @@ export class EditTodoComponent implements OnInit {
     const randomIndex =
       Math.floor(Math.random() * (this.styles.length - 1)) + 1;
     const style = this.styles[randomIndex];
-    return { color: style.color, 'background-color': style.bg };
+
+    const fonts = ['font-one', 'font-two', 'font-three'];
+    const font = fonts[Math.floor(Math.random() * 3)];
+
+    return { color: style.color, 'background-color': style.bg, font: font };
   }
 
   startEditing(index: number) {
@@ -135,7 +139,11 @@ export class EditTodoComponent implements OnInit {
   getColor() {
     this.stylesMap =
       this.localStorageService.getItem<{
-        [key: number]: { color: string; 'background-color': string };
+        [key: number]: {
+          color: string;
+          'background-color': string;
+          font: string;
+        };
       }>('todoStyles') || {};
   }
 }

@@ -1,43 +1,6 @@
-h2 {
-  text-align: center;
-}
-
 .large-status {
   margin: 0;
   font-size: 1.591rem;
-}
-
-.bullet-journal {
-  background-color: #fdf6e3;
-  background-image: radial-gradient(#888 1px, transparent 1px);
-  background-size: 25px 25px;
-  border-radius: 10px;
-  padding: 4rem 1rem;
-  box-shadow: rgb(175, 157, 124) 0px 3px 8px;
-}
-
-.task {
-  padding: 15px;
-  border: none;
-  margin: 1% 7%;
-  box-shadow: #c2b183 0px 3px 8px;
-}
-
-.task:hover {
-  cursor: pointer;
-  transform: scale(1.05);
-}
-
-.no-task-img {
-  display: block;
-  max-width: 550px;
-  width: 100%;
-  margin: 3rem auto;
-}
-
-.content {
-  margin: 1rem;
-  max-width: 1000px;
 }
 
 .addTestData {
@@ -56,23 +19,7 @@ h2 {
   background-color: rgb(241, 71, 71);
 }
 
-.desc {
-  margin: 1% 5%;
-  word-break: break-word;
-}
-
-
-.header {
-  background-color: rgb(255, 215, 147);
-  margin-top: 2rem;
-  padding: 0 0 3rem 0;
-  border-radius: 10px;
-  padding: 2rem;
-  box-shadow: rgb(175, 157, 124) 0px 3px 8px;
-}
-
-@media screen and (max-width: 768px) {
-  .bullet-journal {
-    padding: 1rem 0;
-  }
+.task:hover {
+  cursor: pointer;
+  transform: scale(1.05);
 }

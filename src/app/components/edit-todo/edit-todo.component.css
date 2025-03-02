@@ -1,15 +1,7 @@
-h2 {
-  text-align: center;
-}
-
 .large-checkbox {
   width: 25px;
   height: 25px;
   margin: 0;
-}
-
-.header{
-  position: relative;
 }
 
 .checkAll {
@@ -50,58 +42,7 @@ input {
   cursor: pointer;
 }
 
-.content {
-  margin: 1rem;
-  max-width: 1000px;
-}
-
-.bullet-journal {
-  background-color: #fdf6e3;
-  background-image: radial-gradient(#888 1px, transparent 1px);
-  background-size: 25px 25px;
-  border-radius: 10px;
-  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
-  padding: 4rem 1rem;
-  box-shadow: rgb(175, 157, 124) 0px 3px 8px;
-}
-
-.task {
-  padding: 15px;
-  border: unset;
-  margin: 1% 7%;
-  box-shadow: #c2b183 0px 3px 8px;
-}
-
-.no-task-img {
-  display: block;
-  max-width: 550px;
-  width: 100%;
-  margin: 3rem auto;
-}
-
-.desc {
-  margin: 1% 5%;
-  word-break: break-word;
-}
-
-.header {
-  background-color: rgb(255, 215, 147);
-  margin-top: 2rem;
-  padding: 0 0 3rem 0;
-  border-radius: 10px;
-  padding: 2rem;
-  box-shadow: rgb(175, 157, 124) 0px 3px 8px;
-}
-
 @media screen and (max-width: 768px) {
-  .task {
-    margin: 1% 5%;
-  }
-
-  .bullet-journal {
-    padding: 1rem 0;
-  }
-
   .edit,
   .delete {
     font-size: 15px;

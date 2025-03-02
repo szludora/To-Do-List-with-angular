@@ -1,9 +1,7 @@
 <div class="d-flex flex-column col-11 col-lg-7 col-md-9 content m-auto">
   <div class="header d-flex justify-content-center">
-    <h2 class="">Edit Tasks</h2>
-    <button (click)="checkAll()" class="btn checkAll">
-      Check All
-    </button>
+    <h2>Edit Tasks</h2>
+    <button (click)="checkAll()" class="btn checkAll">Check All</button>
   </div>
   <div class="bullet-journal mt-5">
     <ul class="list-group list-group-light list-group-small">
@@ -12,9 +10,13 @@
         *ngFor="let todo of todos; let i = index"
         [ngStyle]="stylesMap[i]"
       >
-        <span *ngIf="editingIndex !== i" class="flex-grow-1 desc">{{
-          todo.desc
-        }}</span>
+        <span
+          *ngIf="editingIndex !== i"
+          class="flex-grow-1 desc"
+          [ngClass]="stylesMap[i]?.font"
+        >
+          {{ todo.desc }}</span
+        >
 
         <input
           *ngIf="editingIndex === i"

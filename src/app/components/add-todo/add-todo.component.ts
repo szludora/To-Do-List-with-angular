@@ -23,26 +23,29 @@ export class AddTodoComponent {
       this.showValidationErrors = true;
       return;
     }
-    
+
     this.isSubmitted = false;
-  
+
     setTimeout(() => {
       this.isSubmitted = true;
-  
+
       if (this.timeoutId) {
         clearTimeout(this.timeoutId);
       }
-  
+
       this.timeoutId = setTimeout(() => {
         this.isSubmitted = false;
         this.timeoutId = null;
       }, 5000);
     });
-  
-    this.localStorageService.addItem({ desc: this.newTask, status: false });
-  
+
+    this.localStorageService.addItem({
+      desc: this.newTask,
+      status: false,
+      font: 'sans',
+    });
+
     todoForm.resetForm();
     this.showValidationErrors = false;
   }
-  
 }

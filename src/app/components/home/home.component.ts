@@ -11,15 +11,15 @@ import { Router } from '@angular/router';
   styleUrls: ['./home.component.css'],
 })
 export class HomeComponent implements OnInit {
-  todos: { desc: string; status: boolean }[] = [];
+  todos: { desc: string; status: boolean; font: string }[] = [];
 
-  stylesMap: { [key: number]: { color: string; 'background-color': string } } =
+  stylesMap: { [key: number]: { color: string; 'background-color': string, font: string } } =
     {};
 
   testTodos = [
-    { desc: 'Learn Angular', status: false },
-    { desc: 'Build a project', status: false },
-    { desc: 'Get a job offer', status: false },
+    { desc: 'Learn Angular', status: false, font: 'sans' },
+    { desc: 'Build a project', status: false, font: 'sans' },
+    { desc: 'Get a job offer', status: false, font: 'sans' },
   ];
 
   constructor(
@@ -52,12 +52,11 @@ export class HomeComponent implements OnInit {
   goToEditPage(i: number) {
     this.router.navigate(['/edit', i]);
   }
-  
 
   getColor() {
     this.stylesMap =
       this.localStorageService.getItem<{
-        [key: number]: { color: string; 'background-color': string };
+        [key: number]: { color: string; 'background-color': string, font: string };
       }>('todoStyles') || {};
   }
 }
