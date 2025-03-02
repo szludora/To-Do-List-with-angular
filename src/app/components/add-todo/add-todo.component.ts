@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
-import { LocalStorageService } from '../services/local-storage.service';
+import { LocalStorageService } from '../../services/local-storage.service';
 import { CommonModule } from '@angular/common';
 import { NgbAlertModule } from '@ng-bootstrap/ng-bootstrap';
 
