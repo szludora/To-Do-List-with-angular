@@ -27,3 +27,11 @@ form {
   border: unset;
   box-shadow: rgb(175, 157, 124) 0px 3px 8px;
 }
+
+.addTask{
+  background-color: rgb(151, 241, 178);
+}
+
+.addTask:hover{
+  background-color: rgb(71, 224, 117);
+} 

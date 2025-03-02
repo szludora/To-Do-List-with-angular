@@ -25,7 +25,7 @@ h2 {
 
 .task:hover {
   cursor: pointer;
-  transform: scale(105%);
+  transform: scale(1.05);
 }
 
 .no-task-img {
@@ -37,4 +37,20 @@ h2 {
 
 .content {
   margin: 1rem;
+}
+
+.addTestData{
+background-color: rgb(151, 241, 178);
+}
+
+.clearAllData{
+  background-color: rgb(255, 165, 165);
+}
+
+.addTestData:hover{
+  background-color: rgb(71, 224, 117);
+}
+
+.clearAllData:hover{
+  background-color: rgb(241, 71, 71);
 }

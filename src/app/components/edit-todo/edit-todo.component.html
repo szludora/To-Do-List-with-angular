@@ -1,6 +1,6 @@
 <div class="d-flex flex-column col-10 col-lg-6 content m-auto">
   <h2 class="mt-5 mb-5">Edit Tasks</h2>
-  <button (click)="checkAll()" class="btn btn-primary checkAll align-self-end">Check All</button>
+  <button (click)="checkAll()" class="btn checkAll align-self-end">Check All</button>
   <div class="bullet-journal mt-5">
     <ul class="list-group list-group-light list-group-small">
       <li
@@ -33,13 +33,13 @@
           *ngIf="editingIndex !== i"
         >
           <button
-            class="btn btn-danger"
+            class="btn delete"
             (click)="delete(i)"
             [style.visibility]="todo.status ? 'hidden' : 'visible'"
           >
           <i class="fa-regular fa-trash-can"></i>
           </button>
-          <button class="btn btn-primary" (click)="startEditing(i)">
+          <button class="btn edit" (click)="startEditing(i)">
             <i class="fa-regular fa-pen-to-square"></i>
           </button>
         </div>
